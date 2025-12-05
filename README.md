@@ -35,9 +35,9 @@ After the pod starts:
 
 You can SSH into the pod or open via Jupyter Lab.
 
-Open a terminal and execute:
+Either run the following in SSH terminal or open a terminal in Jupyter Lab and execute:
 
-1. `source venv/bin/activate` => The virtual environment is already create via Dockerfile in the `/workspace` directory. You just need to enable.
+1. `source venv/bin/activate` => The virtual environment is already created via Dockerfile in the `/workspace` directory. You just need to enable it.
 2. `sh run.sh` => This will complete the setup and launch the Gradio application as well.
 
 You should see a public Gradio link. Open it and start playing around.
