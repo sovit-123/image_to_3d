@@ -4,3 +4,6 @@ cropped_images
 outputs
 tree.txt
 birefnet_weights
+BiRefNet
+build_setup
+.gradio/
