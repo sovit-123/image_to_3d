@@ -5,6 +5,9 @@ cd build_setup
 git clone https://github.com/jclarkk/Hunyuan3D-2.git
 cd Hunyuan3D-2
 
+echo "Patching Nvdiffrast library. Pinning requirement to v0.3.4..."
+sed -i "s|git+https://github.com/NVlabs/nvdiffrast.git|git+https://github.com/NVlabs/nvdiffrast.git@v0.3.4|" requirements.txt
+
 pip install -r requirements.txt
 pip install -e .
 # for texture
