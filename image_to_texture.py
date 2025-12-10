@@ -137,9 +137,8 @@ def load_hunyuan_texture():
     print("Loading Hunyuan3D Texture model on cuda...")
     pipeline_texture = Hunyuan3DPaintPipeline.from_pretrained(
         'tencent/Hunyuan3D-2',
+        low_vram_mode=args.low_vram_mode
     )
-    if args.low_vram_mode:
-        pipeline_texture.enable_model_cpu_offload()
 
 def unload_hunyuan_texture():
     global pipeline_texture
