@@ -54,6 +54,10 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Image to 3D mesh + texture pipeline")
     parser.add_argument('--birefnet_device', type=str, default='cuda', choices=['cuda', 'cpu'], help='Device for BiRefNet')
     parser.add_argument('--qwen_device', type=str, default='cuda', choices=['cuda', 'cpu'], help='Device for Qwen3-VL')
+    parser.add_argument(
+        '--low_vram_mode',
+        action='store_true'
+    )
     return parser.parse_args()
 
 args = parse_args()
@@ -133,7 +137,7 @@ def load_hunyuan_texture():
     print("Loading Hunyuan3D Texture model on cuda...")
     pipeline_texture = Hunyuan3DPaintPipeline.from_pretrained(
         'tencent/Hunyuan3D-2',
-        device='cuda',
+        low_vram_mode=args.low_vram_mode
     )
 
 def unload_hunyuan_texture():
