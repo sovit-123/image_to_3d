@@ -4,6 +4,10 @@ This project aims to make the image-to-3D mesh and inpainting pipeline a seamles
 
 ***Powered by Hunyuan3D 2.0, Qwen3-VL, and BiRefNet models.***
 
+**The entire pipeline runs with less than 10GB VRAM by default and has option to run even with 8GB VRAM.**
+
+![](assets/image_to_texture_gradio_3d_meshes_demo.gif)
+
 ## To Run Locally
 
 ```
@@ -23,6 +27,12 @@ After setup completes, run `image_to_texture.py`.
 
 ```
 python image_to_texture.py
+```
+
+**If you have 8GB VRAM**:
+
+```
+python image_to_texture.py --low_vram_mode
 ```
 
 ## Run on Runpod via Docker Image
